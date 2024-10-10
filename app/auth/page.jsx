@@ -23,7 +23,7 @@ export async function Authenticator({ searchParams }) {
         Authorization: `Bearer ${accessToken}`,
         Accept: "application/json",
       },
-      next: 10,
+      next: { revalidate: 10 },
     });
 
     const userDataObj = await userResObj.json();
